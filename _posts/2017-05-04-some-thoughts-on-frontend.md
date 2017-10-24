@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Some thoughts on frontend"
 date:   2017-10-24 08:08:26 +0100
 categories: frameworks
@@ -75,7 +75,7 @@ If running into permission errors, chown the folder
 
 
 ---
-layout: post
+layout: default
 title:  "Frontent"
 date:   2017-10-24 08:08:26 +0100
 categories: frameworks

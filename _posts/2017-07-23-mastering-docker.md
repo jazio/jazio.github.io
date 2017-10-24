@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Sailing with Docker"
 date:   2017-08-24 08:08:26 +0100
 categories: tools

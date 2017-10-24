@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "A look into the Elm language"
 date:   2017-10-24 08:08:26 +0100
 categories: programming languages

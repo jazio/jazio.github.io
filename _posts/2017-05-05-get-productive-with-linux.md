@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Get Productive with Linux"
 date:   2017-10-24 08:08:26 +0100
 categories: frameworks
