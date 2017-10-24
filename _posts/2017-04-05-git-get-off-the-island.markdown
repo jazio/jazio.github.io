@@ -1,17 +1,27 @@
-# Git
-# The uncut film of staging.
+---
+layout: post
+title:  "Git, the director uncut film of staging"
+date:   2017-10-24 08:08:26 +0100
+categories: tools
+---
+
+# Git, the director uncut film of staging
+# Things you need to know.
 
 
 
-# Starting a project on github.com
+## Starting a project on github.com
 
 Initialize this repository with a README
 This will allow you to git clone the repository immediately. Skip this step if you have already run git init locally.
 
 Then locally:
+
 ```
 $ git init
+```
 
+```
 $ git remote add origin https://github.com/jazio/silexbasic.git
 fatal: remote origin already exists.
 $ git remote -v
@@ -29,6 +39,8 @@ git status
 git commit -m 'First commit'
 git push
 ```
+
+
 ## Interactive mode
 
 ```
@@ -42,14 +54,17 @@ GitHub maintains an official list of recommended .gitignore files for many popul
 If you already have a file checked in, and you want to ignore it, Git will not ignore the file if you add a rule later. In those cases, you must untrack the file first, by running the following command in your terminal:
 
 
-#Remove untracked files from the working tree
+### Remove untracked files from the working tree
+```
 git-clean -
 Dangerous!
 git clean -n -d <path>
 will do a ‘dry run’ of the command and show you just what files and folders are going to be removed
 git -f -d .
-#CRLF
-#convert files
+```
+
+## CRLF
+#### Convert files
 unix2dos, dos2unix -D filename
 
 
@@ -95,32 +110,33 @@ git checkout origin/hotfix/my-urgent-fix
 you run into a dettached state.
 
 
-## You can create a GitHub repo via the command line using the GitHub API. Check out the repository API. 
+### You can create a GitHub repo via the command line using the GitHub API. Check out the repository API.
 
+```
 curl -u 'USER' https://api.github.com/user/repos -d '{"name":"REPO"}'
+```
 
 
 
 
+### Accidentaly remove head
 
-Accidentaly remove head
-==================================================
-zorobabel@E5520 /var/www/silexbasic $ git push
+$ git push
 fatal: You are not currently on a branch.
 To push the history leading to the current (detached HEAD)
 state now, use
 
     git push origin HEAD:<name-of-remote-branch>
 
-zorobabel@E5520 /var/www/silexbasic $ git branch
+$ git branch
 * (detached from 75bc0b7)
   master
-zorobabel@E5520 /var/www/silexbasic $ git status
+$ git status
 HEAD detached from 75bc0b7
 nothing to commit, working directory clean
 
 
-zorobabel@E5520 /var/www/silexbasic $ git branch
+$ git branch
 * (detached from 75bc0b7)
   master
 
@@ -142,7 +158,7 @@ This will reattach your HEAD to the new temp branch.
 Next, you should compare the current commit (and its history) with the normal branch on which you expected to be working:
 
 
-zorobabel@E5520 /var/www/silexbasic $ git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master temporary
+$ git log --graph --decorate --pretty=oneline --abbrev-commit master origin/master temporary
 * ef6a942 (HEAD, temporary) Validation
 * 75bc0b7 (origin/master, master) form
 * 96c5f9d personalized description in templates
@@ -160,22 +176,23 @@ zorobabel@E5520 /var/www/silexbasic $ git log --graph --decorate --pretty=onelin
 |\
 | * b15301a Initial commit
 * 722b121 First commit
-zorobabel@E5520 /var/www/silexbasic $
+$
 
 
 
 
 NowIf your new temp branch looks good, you may want to update (e.g.) master to point to it:
 
-zorobabel@E5520 /var/www/silexbasic $ git branch -f master temporary
-zorobabel@E5520 /var/www/silexbasic $ git branch
+```
+$ git branch -f master temporary
+$ git branch
   master
 * temporary
-zorobabel@E5520 /var/www/silexbasic $ git checkout master
+$ git checkout master
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
-zorobabel@E5520 /var/www/silexbasic $ git log
+$ git log
 commit ef6a942e79443e2c3ffb444ae3bd62b6b470cf5f
 Author: Ovi Farcas <farcaso@gmail.com>
 Date:   Fri Apr 25 16:09:31 2014 +0200
@@ -195,14 +212,15 @@ Date:   Sat Apr 12 17:33:33 2014 +0200
     personalized description in templates
 
 commit e9405d3788c17321b60302e98517c73e90bfe733
-zorobabel@E5520 /var/www/silexbasic $ git push
+$ git push
+```
 
-
-
+Display all branches
+```
 git branch -a
-this display all branches
+```
 
-zorobabel@E5520 /var/www/silexbasic $ git branch -a
+$ git branch -a
 * master
   temporary
   remotes/origin/master
@@ -217,6 +235,7 @@ Initialize this repository with a README
 This will allow you to git clone the repository immediately. Skip this step if you have already run git init locally.
 
 Then locally:
+```
 git init
 
 $ git remote add origin https://github.com/jazio/silexbasic.git
@@ -233,11 +252,10 @@ git add .
 git status
 git commit -m 'First commit'
 git push
+```
 
+## Ignore folders
 
-
-# Ignore folders
-#-------------------------------------------------------------------------------------------------
 
 A .gitignore file should be committed into your repository, in order to share the ignore rules with any other users that clone the repository.
 
@@ -279,5 +297,6 @@ fatal: ambiguous argument 'deletedFile.txt': unknown revision or path not in the
 ```
 
 So you need to indicate -- there are no options
-
+```
 git log -- deletedFile.txt
+```

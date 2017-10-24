@@ -1,14 +1,15 @@
-============================================================
+---
+layout: post
+title:  "Sailing with Docker"
+date:   2017-08-24 08:08:26 +0100
+categories: tools
+---
 
-Docker.
 
-============================================================
-
-
-# Get docker container [DOCKER_ACCOUNT]/[PACKAGE]
+## Get docker container [DOCKER_ACCOUNT]/[PACKAGE]
 docker pull wadmiraal/drupal:7.41
 
-# Run docker
+## Run docker
 docker run -d -p 8083:80 -p 8024:22 -t wadmiraal/drupal
 
 or
@@ -18,11 +19,11 @@ docker run -d -p 8083:80 -p 8024:22 -v `pwd`/modules:/var/www/sites/all/modules/
 ```
 
 
-#Remove or stop all containers
+## Remove or stop all containers
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
-# Or, build one of your own
+## Or, build one of your own
 1. Create a `Dockerfile`
 
 e.g install nodejs
@@ -42,17 +43,17 @@ EXPOSE  8080
 CMD ["node", "/src/server.js"]
 ``` 
 
-# Get into docker
+## Get into docker
 ssh root@localhost -p 8024
 
-# Check available images
+## Check available images
 docker images
 
-# Remove images
+## Remove images
 http://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker
 
 
-
+```
 # ====================================================================================================
 # This file contains all the commands a user could call on the command line to assemble an image.
 # Based on this file and your OS context (local files PATH and URL) the command `docker build Dockerfile` will create a build.
@@ -95,8 +96,9 @@ RUN apt-get clean
 RUN sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
 RUN sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/cli/php.ini
 
+```
 
-
+```
 
 RHEL
 
@@ -138,10 +140,10 @@ RUN yum install -y \
     RUN a2enmod rewrite
 
 RUN /sbin/service mysqld start; /usr/bin/mysqladmin -u root password "password"; /usr/bin/mysql -uroot -ppassword -e "CREATE DATABASE dev; CREATE USER 'dev'@'localhost' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON dev.* TO 'dev'@'localhost'; FLUSH PRIVILEGES;"
+```
 
 
-
-basj file
+A basic file
 
 DOCKER_USER=jazio
 DOCKER_IMAGE=fpfis_lamp
