@@ -13,7 +13,7 @@ categories: frameworks
 You can use Composer to create new projects from an existing package. This is the equivalent of doing a git clone/svn checkout followed by a composer install of the vendors.
 
 
-
+```
 .HTACCESS
 
 
@@ -40,25 +40,22 @@ RewriteRule ^(.*[^/]) index.php?var=$1 [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+```
 
 ... means that if the file with the specified name in the browser doesn't exist, or the directory in the browser doesn't exist then procede to the rewrite rule below
 
 
-.htaccess in the views folder
+# .htaccess in the views folder
 
 Prevent anyone to retrieve files inside templates folder
 
 
-
-
-Silex for sublime
-https://sublime.wbond.net/packages/Silex%20Snippets
+```
 <?php
 
 # Error Handling
 use Symfony\Component\HttpFoundation\Response;
 
-```
 $app->error(function (\Exception $e) use ($app) {
     return new Response('Wooops, page not found!');
 });
@@ -165,7 +162,7 @@ $app->match('/contact', function (Request $request) use ($app) {
 })->bind('contact');
 ```
 
-Templates
+## Templates
 
 ```
 {% extends 'layout.twig' %}
@@ -178,7 +175,7 @@ Templates
 ```
 
 Form template improved
-
+```
     <form method="post" action="{{ app.url_generator.generate('contact') }}" enctype="application/x-www-form-urlencoded">
  
 
@@ -187,7 +184,7 @@ Form template improved
       {{ form_row(form.email) }}
         {{ form_row(form.message) }}
     </form>
-
+```
 
 
 
@@ -231,11 +228,11 @@ use Silex\Provider\TranslationServiceProvider;
 application/x-www-form-urlencoded   Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
 multipart/form-data No characters are encoded. This value is required when you are using forms that have a file upload control
 text/plain  Spaces are converted to "+" symbols, but no special characters are encoded
-
+```
 {{ form_widget(form) }}
 
-
-SwiftMailer
+```
+## SwiftMailer
 headers
 http://swiftmailer.org/docs/headers.html
 
