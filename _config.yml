@@ -1,4 +1,4 @@
-theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
 title: Welcome to Jazio Blog
 description: Technical experiments.
 markdown: kramdown
