@@ -1,4 +1,5 @@
-yout: default
+---
+layout: default
 ---
 
 <div class="posts">
@@ -7,11 +8,6 @@ yout: default
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
 </div>

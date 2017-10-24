@@ -5,7 +5,8 @@ date:   2017-10-24 08:08:26 +0100
 categories: programming languages
 ---
 
-#Elm
+# A look into the Elm language
+
 
 A fully functional language.
 
@@ -23,7 +24,7 @@ Suitable for reactive programming.
 
 
 
-##Union types
+## Union types
 
 A natural way to shape data.
 
