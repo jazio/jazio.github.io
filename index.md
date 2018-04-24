@@ -2,10 +2,4 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-    </article>
-  {% endfor %}
-</div>
+Moved to <a href="https://jazio.gitlab.io">jazio.gitlab.io</a>
